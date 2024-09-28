@@ -1,6 +1,6 @@
 # CT313H: WEB TECHNOLOGIES AND SERVICES
 
-## Project Name: ...
+## Project Name: FlashCard
 
 Semester 1, Academic year: 2024-2025
 
@@ -8,9 +8,9 @@ Semester 1, Academic year: 2024-2025
 
 **Student Name 1**: ...
 
-**Student ID 2**: ...
+**Student ID 2**: B2111947
 
-**Student Name 2**: ...
+**Student Name 2**: Trinh Thanh Sang
 
-**Class Number**: ...
+**Class Number**: M02
 
