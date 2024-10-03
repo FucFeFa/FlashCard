@@ -1,0 +1,48 @@
+front-end/
+├── public/              # Các tài nguyên tĩnh như hình ảnh, font, favicon, v.v.
+│   ├── favicon.ico
+│   └── logo.png
+├── src/                 # Mã nguồn chính của ứng dụng
+│   ├── assets/          # Các tài nguyên tĩnh khác được sử dụng trong Vue như CSS, hình ảnh
+│   │   ├── css/
+│   │   ├── img/
+│   └── components/      # Các thành phần Vue (hoặc React components)
+│       ├── Header.vue
+│       ├── Footer.vue
+│       └── ...
+│   ├── views/           # Các trang (views) chính của ứng dụng
+│   │   ├── Home.vue
+│   │   ├── About.vue
+│   │   └── ...
+│   ├── router/          # Cấu hình Vue Router (điều hướng)
+│   │   └── index.js
+│   ├── store/           # Quản lý trạng thái (nếu bạn dùng Vuex, Redux)
+│   │   └── index.js
+│   ├── App.vue          # Thành phần gốc của Vue
+│   └── main.js          # File khởi tạo ứng dụng Vue
+├── package.json         # Các thông tin dự án front-end và các dependency
+└── vue.config.js        # Cấu hình Vue.js (hoặc tương tự với React)
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+back-end/
+├── controllers/         # Xử lý logic chính của các API (nếu theo kiến trúc MVC)
+│   ├── userController.js
+│   └── productController.js
+├── models/              # Các model tương tác với cơ sở dữ liệu
+│   ├── userModel.js
+│   └── productModel.js
+├── routes/              # Các tệp định nghĩa route cho API
+│   ├── userRoutes.js
+│   └── productRoutes.js
+├── middleware/          # Các middleware dùng để xử lý dữ liệu trước khi tới controller
+│   ├── authMiddleware.js
+│   └── errorHandler.js
+├── config/              # Cấu hình dự án, ví dụ cấu hình kết nối cơ sở dữ liệu
+│   └── db.js
+├── utils/               # Các hàm tiện ích, helper
+│   └── validator.js
+├── app.js               # File chính khởi động server
+├── server.js            # File chính để chạy server
+├── package.json         # Thông tin dự án và các dependency
+└── .env                 # Biến môi trường (như kết nối DB, API key)
