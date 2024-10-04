@@ -18,7 +18,7 @@
                 <span class="study-with">Study with</span>
                 <li id="item4" class="navContent-item" @click="changeColor('item4')">
                     <i class="fa-solid fa-tags"></i>
-                    <a class="text">Notifications</a>
+                    <a class="text">Flash card</a>
                 </li>
             </div>
         </ul>
