@@ -34,3 +34,6 @@ create table library (
 	`user_id` int not null unique,
     foreign key (`user_id`) references users(`user_id`)
 );
+
+/* insert users */
+insert into users(user_username, user_password, user_fullname) values
