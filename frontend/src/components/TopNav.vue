@@ -40,9 +40,11 @@
             </div>
     
             <div class="topNav-right">
-                <div class="topNav-create">
+                
+                <router-link to="/createpage"><div class="topNav-create">
                     <i class="fa-solid fa-square-plus"></i>
-                </div>
+                </div></router-link>
+                
     
                 <div @click="toggleUserMenu()" class="topNav-user">
                     <li class="header__navbar-item header__navbar-user">
