@@ -27,6 +27,7 @@
         <div class="content-container">
                 
                 <div class="content-container-recent">
+                  <router-link to="/learnpage">
                     <ul class="content-container-flashcard">
                         <li><h3>NameFlashCard</h3></li>
                         <li class="terms">1021 terms</li>
@@ -35,29 +36,39 @@
                             <span class="header__navbar-user--name">Paimon</span>
                         </li>
                     </ul>
+                  </router-link>
+                    
                 </div>
 
                 <div class="content-container-recent">
+                  <router-link to="/learnpage">
                     <ul class="content-container-flashcard">
                         <li><h3>NameFlashCard</h3></li>
-                        <li class="terms">102 terms</li>
+                        <li class="terms">1021 terms</li>
                         <li class="makeby">
                             <img src="@/assets/img/lumine.jpg" alt="" class="header__navbar-user-img">
                             <span class="header__navbar-user--name">Paimon</span>
                         </li>
                     </ul>
+                  </router-link>
+                    
                 </div>
 
                 <div class="content-container-recent">
+                  <router-link to="/learnpage">
                     <ul class="content-container-flashcard">
                         <li><h3>NameFlashCard</h3></li>
-                        <li class="terms">102 terms</li>
+                        <li class="terms">1021 terms</li>
                         <li class="makeby">
                             <img src="@/assets/img/lumine.jpg" alt="" class="header__navbar-user-img">
                             <span class="header__navbar-user--name">Paimon</span>
                         </li>
                     </ul>
+                  </router-link>
+                    
                 </div>
+
+                
                 
             </div>
 

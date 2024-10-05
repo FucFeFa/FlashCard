@@ -41,9 +41,11 @@
     
             <div class="topNav-right">
                 
-                <router-link to="/createpage"><div class="topNav-create">
-                    <i class="fa-solid fa-square-plus"></i>
-                </div></router-link>
+                <router-link to="/createpage">
+                    <div class="topNav-create">
+                        <i class="fa-solid fa-square-plus"></i>
+                    </div>
+                </router-link>
                 
     
                 <div @click="toggleUserMenu()" class="topNav-user">
