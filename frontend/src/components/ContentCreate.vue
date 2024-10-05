@@ -135,15 +135,22 @@
                     </div>
                 </form>
                 
-            </div>
-            
-            <div class="bottomContent">
                 <div class="create-card">
-                    <span>Add Card</span>
+                        <div class="create-card-item">
+                            <div class="create-card-top add-card-hover">
+                                <div class="add-card"><span>+ Add Card</span></div>
+                            </div>
+    
+                           
+                        </div>                       
                 </div>
+
             </div>
+           
+        <div class="footer">
 
         </div>
+    </div>
 </template>
 
 <script>
@@ -162,6 +169,8 @@ export default {
     },
     mounted() {
         window.addEventListener('scroll', this.handleScroll);
+        this.addCardHover();
+
     },
     beforeDestroy() {
         window.removeEventListener('scroll', this.handleScroll); // Don't forget to remove the listener when component is destroyed
@@ -175,7 +184,7 @@ export default {
             const topOffset = 50; // Khoảng cách ban đầu từ top của trang
 
             if (!topContent || !leftBar) {
-                
+
                 return;  // Thoát an toàn nếu các phần tử không tồn tại
             }
 
@@ -195,9 +204,30 @@ export default {
 
                 leftBar.classList.remove('hidden');
             }
-        }
+        },
+        
+        addCardHover () {
+            const addCardHover = document.querySelector('.add-card-hover')
+
+            addCardHover.addEventListener('mouseover',() => {
+                const addCard = document.querySelector('.add-card span')
+                addCard.style.color = '#ffcd1f'
+                addCardHover.style.cursor = 'pointer'
+            })
+
+            addCardHover.addEventListener('mouseout',() => {
+                const addCard = document.querySelector('.add-card span')
+                addCard.style.color = ''
+                
+            })
+        },
+        
     },
+
+   
 };
+
+
 
 </script>
 
