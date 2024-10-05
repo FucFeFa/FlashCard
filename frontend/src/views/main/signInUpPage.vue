@@ -1,7 +1,3 @@
-
-
-
-
 <template>
     <div id="container" :class="{ 'right-panel-active': isActive }">
       <div class="container">
@@ -24,6 +20,14 @@
             </div>
             <div class="infield">
               <input type="password" placeholder="Password" />
+              <label></label>
+            </div>
+            <div class="infield">
+              <input type="password" placeholder="Confirm Password" />
+              <label></label>
+            </div>
+            <div class="infield">
+              <input type="hidden" placeholder="" />
               <label></label>
             </div>
             <button>Sign Up</button>
