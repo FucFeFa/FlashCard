@@ -9,4 +9,6 @@ module.exports.setup = (app) => {
     app.use('/api/v1/users', router)
 
     router.get('/', userController.getAllUsers)
+
+    router.post('/signup', userController.signup)
 }
