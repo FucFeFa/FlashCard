@@ -12,7 +12,7 @@ const getAllUsers = async (req, res) => {
     }
 }
 
-// Signup
+// Sign up
 const signup = async (req, res) => {
     
     try{
@@ -44,7 +44,34 @@ const signup = async (req, res) => {
     }
 }
 
+// Sign in
+const signin = async (req, res) => {
+    try {
+        const { username, password } = req.body;
+
+        const getUsername = await userModel.getUsername(username)
+
+        if (!getUsername) {
+            return res.status(401).json({ message: 'Username is not exists' });
+        }
+
+        const getPassword = await userModel.getPassword(username)
+        const match = await bcrypt.compareSync(password, getPassword)
+
+        if(!match) {
+            return res.status(401).json({ message: 'Wrong password' });
+        } else {
+            res.json({ message: 'Success' });
+        }
+    }
+    catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Error signing in' });
+    }
+}
+
 module.exports = {
     getAllUsers,
     signup,
+    signin,
 }
