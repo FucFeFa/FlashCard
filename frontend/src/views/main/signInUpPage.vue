@@ -2,7 +2,7 @@
     <div id="container" :class="{ 'right-panel-active': isActive }">
       <div class="container">
         <div class="form-container sign-up-container">
-          <form action="#">
+          <form action="" id="sign-up">
             <h1>Create Account</h1>
             <div class="social-container">
               <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -11,7 +11,7 @@
             </div>
             <span>or use your email for registration</span>
             <div class="infield">
-              <input type="text" placeholder="Username" />
+              <input type="text" placeholder="Username" name="username"/>
               <label></label>
             </div>
             <div class="infield">
@@ -26,6 +26,7 @@
               <input type="password" placeholder="Confirm Password" name="confirmPassword" />
               <label></label>
             </div>
+            <span class="message-sign-up"></span>
             <div class="infield">
               <input id="date" type="hidden" placeholder="" name="date"/>
               <label></label>
@@ -51,8 +52,9 @@
               <input type="password" placeholder="Password" name="password" />
               <label></label>
             </div>
+            <span class="message-sign-in"></span>
             <a href="#" class="forgot">Forgot your password?</a>
-            <router-link to="/"><button>Sign in</button></router-link>
+            <button>Sign in</button>
           </form>
         </div>
   
@@ -84,7 +86,8 @@
     },
 
     mounted() {
-      this.getDate();
+      this.signUp();
+      this.signIn();
     },
 
     methods: {
@@ -99,6 +102,8 @@
         });
       },
 
+      // Lay thoi gian hien tai
+      
       getDate () {
         const now = new Date();
 
@@ -113,7 +118,73 @@
         const currentDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 
         document.querySelector('#date').value = currentDateTime;
-      }
+      },
+
+      // form dang ky
+      signUp () {
+        const signUpForm = document.querySelector('#sign-up')
+        signUpForm.addEventListener('submit', async (e) => {
+          this.getDate()
+          e.preventDefault()
+
+          const formData = new FormData(signUpForm)
+          const data = Object.fromEntries(formData.entries())
+          console.log(formData)
+          try {
+            const response = await fetch('http://localhost:3000/api/v1/users/signup', {
+              method: 'POST', 
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+            })
+            if (response.ok) {
+              this.$router.push('/');
+            } else {
+              const errorText = await response.text()
+              document.querySelector('.message-sign-up').innerHTML = JSON.parse(errorText).message
+              e.preventDefault()
+            }
+          }
+
+          catch (error) {
+            console.log(error)
+          }
+        })
+      },
+
+      // form dang nhap
+      signIn () {
+        const signInForm = document.querySelector('#sign-in')
+        signInForm.addEventListener('submit', async (e) => {
+          e.preventDefault()
+
+          const formData = new FormData(signInForm)
+          const data = Object.fromEntries(formData.entries())
+          console.log(formData)
+          try {
+            const response = await fetch('http://localhost:3000/api/v1/users/signin', {
+              method: 'POST', 
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+            })
+            if (response.ok) {
+              this.$router.push('/');
+            } else {
+              const errorText = await response.text()
+              document.querySelector('.message-sign-in').innerHTML = JSON.parse(errorText).message
+              e.preventDefault()
+            }
+          }
+
+          catch (error) {
+            console.log(error)
+          }
+        })
+      },
+
     },
   };
 </script>
@@ -401,5 +472,11 @@ p {
     100% {
         width: 143.67px;
     }
+}
+
+.message-sign-in,
+.message-sign-up {
+  width: 100%;
+  color: #f6406c;
 }
 </style>

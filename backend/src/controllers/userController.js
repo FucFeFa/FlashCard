@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 const getAllUsers = async (req, res) => {
     try {
-        const users  = await userModel.getAllUsers();
+        const users = await userModel.getAllUsers();
         res.json(users);
     }
     catch (error) {
@@ -14,8 +14,8 @@ const getAllUsers = async (req, res) => {
 
 // Sign up
 const signup = async (req, res) => {
-    
-    try{
+
+    try {
         const { username, password, confirmPassword, email, date } = req.body;
 
         if (!username || !email || !password || !confirmPassword) {
@@ -25,24 +25,24 @@ const signup = async (req, res) => {
         const existUsername = await userModel.getUsername(username);
         const existEmail = await userModel.getEmail(email);
 
-        if(existUsername ){
-            return res.status(400).json({ message: 'Username already exists'});
+        if (existUsername) {
+            return res.status(400).json({ message: 'Username already exists' });
         }
 
-        if(existEmail){
+        if (existEmail) {
             return res.status(400).json({ message: 'Email already exists' });
         }
 
-        if(password !== confirmPassword) {
+        if (password !== confirmPassword) {
             return res.status(400).json({ message: 'Passwords do not match' });
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const user = await userModel.signup(username, hashedPassword, email, date);
-        res.json(user);
+        res.status(200).json(user);
     }
-    catch(error){
+    catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Error signing up' });
     }
@@ -62,7 +62,7 @@ const signin = async (req, res) => {
         const getPassword = await userModel.getPassword(username)
         const match = await bcrypt.compareSync(password, getPassword)
 
-        if(!match) {
+        if (!match) {
             return res.status(401).json({ message: 'Wrong password' });
         } else {
             res.json({ message: 'Success' });
