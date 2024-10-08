@@ -11,7 +11,7 @@
             </div>
             <span>or use your email for registration</span>
             <div class="infield">
-              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Username" />
               <label></label>
             </div>
             <div class="infield">
@@ -19,15 +19,15 @@
               <label></label>
             </div>
             <div class="infield">
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" name="password" />
               <label></label>
             </div>
             <div class="infield">
-              <input type="password" placeholder="Confirm Password" />
+              <input type="password" placeholder="Confirm Password" name="confirmPassword" />
               <label></label>
             </div>
             <div class="infield">
-              <input type="hidden" placeholder="" />
+              <input id="date" type="hidden" placeholder="" name="date"/>
               <label></label>
             </div>
             <button>Sign Up</button>
@@ -35,7 +35,7 @@
         </div>
   
         <div class="form-container sign-in-container">
-          <form action="#">
+          <form action="" id="sign-in">
             <h1>Sign in</h1>
             <div class="social-container">
               <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -44,11 +44,11 @@
             </div>
             <span>or use your account</span>
             <div class="infield">
-              <input type="email" placeholder="Email" name="email"/>
+              <input type="text" placeholder="Username" name="username"/>
               <label></label>
             </div>
             <div class="infield">
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" name="password" />
               <label></label>
             </div>
             <a href="#" class="forgot">Forgot your password?</a>
@@ -73,15 +73,20 @@
         </div>
       </div>
     </div>
-  </template>
+</template>
   
-  <script>
+<script>
   export default {
     data() {
       return {
         isActive: false,
       };
     },
+
+    mounted() {
+      this.getDate();
+    },
+
     methods: {
       togglePanel() {
         this.isActive = !this.isActive;
@@ -93,9 +98,25 @@
           overlayBtn.classList.add('btnScaled');
         });
       },
+
+      getDate () {
+        const now = new Date();
+
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+
+        const currentDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
+        document.querySelector('#date').value = currentDateTime;
+      }
     },
   };
-  </script>
+</script>
 
 <style scoped >
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
