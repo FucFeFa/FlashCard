@@ -1,10 +1,14 @@
 <template>
     <div class="leftNav" id="sidebar">
         <ul class="leftNav-content">
+
+          <router-link to='/'>
             <li id="item1" class="navContent-item navContent-itemInfor" @click="changeColor('item1')">
                 <i class="fa-solid fa-star"></i> 
                 <a class="text">Home</a>
             </li>
+          </router-link>
+            
             <li id="item2" class="navContent-item" @click="changeColor('item2')">
                 <i class="fa-regular fa-folder-open"></i>
                 <a class="text">Your library</a>
