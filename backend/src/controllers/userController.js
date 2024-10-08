@@ -39,8 +39,11 @@ const signup = async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        const user = await userModel.signup(username, hashedPassword, email, date);
-        res.status(200).json(user);
+        await userModel.signup(username, hashedPassword, email, date);
+        
+        req.session.user = await userModel.getUserData(username)
+        req.session.user_username = username
+        res.status(200).json({ message: req.session.user });
     }
     catch (error) {
         console.error(error);
@@ -65,7 +68,9 @@ const signin = async (req, res) => {
         if (!match) {
             return res.status(401).json({ message: 'Wrong password' });
         } else {
-            res.json({ message: 'Success' });
+            req.session.user = await userModel.getUserData(username)
+            req.session.user_username = username
+            res.status(200).json({ message: req.session.user });
         }
     }
     catch (error) {
@@ -74,8 +79,18 @@ const signin = async (req, res) => {
     }
 }
 
+// User data
+const userData = (req, res) => {
+    if (!req.session.user) {
+        return res.status(401).json({ message: 'Not authenticated' });
+    }
+
+    res.status(200).json({ user: req.session.user });
+}
+
 module.exports = {
     getAllUsers,
     signup,
     signin,
+    userData,
 }

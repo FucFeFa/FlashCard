@@ -7,6 +7,10 @@ const userModel = {
         return db('users').select('*');
     },
 
+    getUserData: (username) => {
+        return db('users').select('*').where({ user_username: username }).first();
+    },
+
     getUsername: (username) => {
         return db('users').where({ user_username: username }).first();
     },
