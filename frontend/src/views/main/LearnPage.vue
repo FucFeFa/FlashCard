@@ -1,16 +1,18 @@
 <template>
     <div class="main">
+      
       <TopNav />
-      <div class="contentCreate" style="display: flex; justify-content: space-between;">
-            <LeftBar />
-            <LearnContent />
+      <div class="contentMain">
+        <LeftNav />
+        <LearnContent />
       </div>
+      
     </div>
 </template>
   
 <script>
 import TopNav from '@/components/TopNav.vue';
-import LeftBar from '@/components/LeftBar.vue';
+import LeftNav from '@/components/LeftNav.vue';
 import LearnContent from '@/components/LearnContent.vue';
 
 import '@/assets/css/contentCreate.css';
@@ -19,7 +21,7 @@ import '@/assets/css/contentCreate.css';
 export default {
   components: {
     TopNav,
-    LeftBar,
+    LeftNav,
     LearnContent,
   },
 };
