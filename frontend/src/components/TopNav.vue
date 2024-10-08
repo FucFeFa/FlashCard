@@ -6,11 +6,35 @@
         isUserMenuVisible: false,
       };
     },
+
+    mounted() {
+        this.userInfo();
+    },
+
     methods: {
 
         toggleUserMenu() {
             this.isUserMenuVisible = !this.isUserMenuVisible;
-            console.log(this.isUserMenuVisible)
+            console.log(this.isUserMenuVisible);
+        },
+
+        async userInfo() {
+            const response = await fetch('http://localhost:3000/api/v1/users',{
+                method: 'GET',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                credentials: 'include',
+  
+            })
+
+            const data = await response.json();
+            const user = data.user
+            const avatar = user.user_avatar
+            const name = user.user_fullname
+            document.querySelector('.header__navbar-user-img').src = require(`../assets/img/${avatar}`)
+            document.querySelector('.header__navbar-user--name').innerHTML = name
+            
         },
     },
 
@@ -50,8 +74,8 @@
     
                 <div @click="toggleUserMenu()" class="topNav-user">
                     <li class="header__navbar-item header__navbar-user">
-                        <img src="https://thicc.mywaifulist.moe/waifus/32703/9ff5f9810c5eb571975b112419613530607989e7b7a83014af1aabf721e3b8ad_thumb.png" alt="" class="header__navbar-user-img">
-                        <span class="header__navbar-user--name">Paimon</span>
+                        <img src="" alt="" class="header__navbar-user-img">
+                        <span class="header__navbar-user--name"></span>
     
                         <ul id="js_user" v-show="isUserMenuVisible"  class="header__navbar-user--menu visible">
                             <div class="header__navbar-user--top">

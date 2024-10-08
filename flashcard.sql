@@ -10,7 +10,7 @@ create table users (
     `user_phone` varchar(10) unique,
     `user_sex` boolean,
     `user_date_signup` varchar(255),
-    `user_avatar` varchar(255) default './asset/img/default.jpg'
+    `user_avatar` varchar(255) default 'default.jpg'
 );
 
 create table card (
