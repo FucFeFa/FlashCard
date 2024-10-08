@@ -5,9 +5,8 @@
 </template>
 
 <style scoped>
-    .learn-content {
-        width: 100%;
-        height: 100%;
-    }
-
+.learn-content {
+    width: 100%;
+    height: 100%;
+}
 </style>

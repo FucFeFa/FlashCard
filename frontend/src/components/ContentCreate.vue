@@ -1,155 +1,155 @@
 <template>
     <div class="contentCreate">
-            <div class="leftBar">
-                <ul class="leftBar-content leftNav-content">
-                    <router-link to="/">
-                        <li class="leftBar-item navContent-item navContent-itemInfor">
-                            <i class="fa-solid fa-star"></i> 
-                        </li>
-                    </router-link>
-                    
-                    <li class="leftBar-item navContent-item">
-                        <i class="fa-regular fa-folder-open"></i>
+        <div class="leftBar">
+            <ul class="leftBar-content leftNav-content">
+                <router-link to="/">
+                    <li class="leftBar-item navContent-item navContent-itemInfor">
+                        <i class="fa-solid fa-star"></i>
                     </li>
-                    <li class="leftBar-item navContent-item">
-                        <i class="fa-solid fa-bell"></i>
-                    </li>
-                    <li class="leftBar-item navContent-item">
-                        <i class="fa-solid fa-tags"></i>
-                    </li>
-                </ul>
+                </router-link>
+
+                <li class="leftBar-item navContent-item">
+                    <i class="fa-regular fa-folder-open"></i>
+                </li>
+                <li class="leftBar-item navContent-item">
+                    <i class="fa-solid fa-bell"></i>
+                </li>
+                <li class="leftBar-item navContent-item">
+                    <i class="fa-solid fa-tags"></i>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bodyContent">
+            <div class="topContent">
+                <div class="topContent-left">
+                    <h2>Create a new flashcard set</h2>
+                </div>
+
+                <div class="topContent-right">
+                    <a class="btn">Create</a>
+                    <a class="btn btn-01">Create and practice</a>
+                </div>
+
             </div>
 
-            <div class="bodyContent">
-                <div class="topContent">
-                    <div class="topContent-left">
-                        <h2>Create a new flashcard set</h2>
+
+            <form action="">
+                <div class="create-info">
+                    <div class="create-item">
+                        <input type="text" class="create-title" placeholder="Enter a title">
+                        <label></label>
                     </div>
-    
-                    <div class="topContent-right">
-                        <a class="btn">Create</a>
-                        <a class="btn btn-01">Create and practice</a>
+
+                    <div class="create-item">
+                        <input type="text" class="create-description" placeholder="Subject">
+                        <label></label>
+                    </div>
+
+                    <div class="create-item description-expand">
+                        <input type="text" class="create-subject" placeholder="Add a description">
+                        <label></label>
                     </div>
 
                 </div>
+            </form>
 
-
-                <form action="">
-                    <div class="create-info">
-                        <div class="create-item">
-                            <input type="text" class="create-title" placeholder="Enter a title">
-                            <label></label>
-                        </div>
-    
-                        <div class="create-item">
-                            <input type="text" class="create-description" placeholder="Subject">
-                            <label></label>
-                        </div>
-                        
-                        <div class="create-item description-expand">
-                            <input type="text" class="create-subject" placeholder="Add a description">
-                            <label></label>
-                        </div>
-    
-                    </div>
-                </form>
-
-                <form action="">
-                    <div class="create-card">
-                        <div class="create-card-item">
-                            <div class="create-card-top">
-                                <div><span>1</span></div>
-                                <div><i class="fa-solid fa-trash"></i></div>
-                            </div>
-    
-                            <div class="create-card-body">
-                                <input type="text" placeholder="Enter your question" class="create-card-input">
-                                <input type="text" placeholder="Enter your anwser" class="create-card-input">
-                            </div>
-
-                            <div class="create-card-bottom">
-                                <span>TERM</span>
-                                <span>DEFINITION</span>
-                            </div>
-                        </div>                       
-                    </div>
-                </form>
-                
-                <form action="">
-                    <div class="create-card">
-                        <div class="create-card-item">
-                            <div class="create-card-top">
-                                <div><span>1</span></div>
-                                <div><i class="fa-solid fa-trash"></i></div>
-                            </div>
-    
-                            <div class="create-card-body">
-                                <input type="text" placeholder="Enter your question" class="create-card-input">
-                                <input type="text" placeholder="Enter your anwser" class="create-card-input">
-                            </div>
-
-                            <div class="create-card-bottom">
-                                <span>TERM</span>
-                                <span>DEFINITION</span>
-                            </div>
-                        </div>                       
-                    </div>
-                </form>
-
-                <form action="">
-                    <div class="create-card">
-                        <div class="create-card-item">
-                            <div class="create-card-top">
-                                <div><span>1</span></div>
-                                <div><i class="fa-solid fa-trash"></i></div>
-                            </div>
-    
-                            <div class="create-card-body">
-                                <input type="text" placeholder="Enter your question" class="create-card-input">
-                                <input type="text" placeholder="Enter your anwser" class="create-card-input">
-                            </div>
-
-                            <div class="create-card-bottom">
-                                <span>TERM</span>
-                                <span>DEFINITION</span>
-                            </div>
-                        </div>                       
-                    </div>
-                </form>
-
-                <form action="">
-                    <div class="create-card">
-                        <div class="create-card-item">
-                            <div class="create-card-top">
-                                <div><span>1</span></div>
-                                <div><i class="fa-solid fa-trash"></i></div>
-                            </div>
-    
-                            <div class="create-card-body">
-                                <input type="text" placeholder="Enter your question" class="create-card-input">
-                                <input type="text" placeholder="Enter your anwser" class="create-card-input">
-                            </div>
-
-                            <div class="create-card-bottom">
-                                <span>TERM</span>
-                                <span>DEFINITION</span>
-                            </div>
-                        </div>                       
-                    </div>
-                </form>
-                
+            <form action="">
                 <div class="create-card">
-                        <div class="create-card-item">
-                            <div class="create-card-top add-card-hover">
-                                <div class="add-card"><span>+ Add Card</span></div>
-                            </div>
-    
-                           
-                        </div>                       
-                </div>
+                    <div class="create-card-item">
+                        <div class="create-card-top">
+                            <div><span>1</span></div>
+                            <div><i class="fa-solid fa-trash"></i></div>
+                        </div>
 
+                        <div class="create-card-body">
+                            <input type="text" placeholder="Enter your question" class="create-card-input">
+                            <input type="text" placeholder="Enter your anwser" class="create-card-input">
+                        </div>
+
+                        <div class="create-card-bottom">
+                            <span>TERM</span>
+                            <span>DEFINITION</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <form action="">
+                <div class="create-card">
+                    <div class="create-card-item">
+                        <div class="create-card-top">
+                            <div><span>1</span></div>
+                            <div><i class="fa-solid fa-trash"></i></div>
+                        </div>
+
+                        <div class="create-card-body">
+                            <input type="text" placeholder="Enter your question" class="create-card-input">
+                            <input type="text" placeholder="Enter your anwser" class="create-card-input">
+                        </div>
+
+                        <div class="create-card-bottom">
+                            <span>TERM</span>
+                            <span>DEFINITION</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <form action="">
+                <div class="create-card">
+                    <div class="create-card-item">
+                        <div class="create-card-top">
+                            <div><span>1</span></div>
+                            <div><i class="fa-solid fa-trash"></i></div>
+                        </div>
+
+                        <div class="create-card-body">
+                            <input type="text" placeholder="Enter your question" class="create-card-input">
+                            <input type="text" placeholder="Enter your anwser" class="create-card-input">
+                        </div>
+
+                        <div class="create-card-bottom">
+                            <span>TERM</span>
+                            <span>DEFINITION</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <form action="">
+                <div class="create-card">
+                    <div class="create-card-item">
+                        <div class="create-card-top">
+                            <div><span>1</span></div>
+                            <div><i class="fa-solid fa-trash"></i></div>
+                        </div>
+
+                        <div class="create-card-body">
+                            <input type="text" placeholder="Enter your question" class="create-card-input">
+                            <input type="text" placeholder="Enter your anwser" class="create-card-input">
+                        </div>
+
+                        <div class="create-card-bottom">
+                            <span>TERM</span>
+                            <span>DEFINITION</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="create-card">
+                <div class="create-card-item">
+                    <div class="create-card-top add-card-hover">
+                        <div class="add-card"><span>+ Add Card</span></div>
+                    </div>
+
+
+                </div>
             </div>
-           
+
+        </div>
+
         <div class="footer">
 
         </div>
@@ -208,26 +208,26 @@ export default {
                 leftBar.classList.remove('hidden');
             }
         },
-        
-        addCardHover () {
+
+        addCardHover() {
             const addCardHover = document.querySelector('.add-card-hover')
 
-            addCardHover.addEventListener('mouseover',() => {
+            addCardHover.addEventListener('mouseover', () => {
                 const addCard = document.querySelector('.add-card span')
                 addCard.style.color = '#ffcd1f'
                 addCardHover.style.cursor = 'pointer'
             })
 
-            addCardHover.addEventListener('mouseout',() => {
+            addCardHover.addEventListener('mouseout', () => {
                 const addCard = document.querySelector('.add-card span')
                 addCard.style.color = ''
-                
+
             })
         },
-        
+
     },
 
-   
+
 };
 
 
@@ -235,7 +235,4 @@ export default {
 </script>
 
 
-<style scoped>
-
-
-</style>
+<style scoped></style>
