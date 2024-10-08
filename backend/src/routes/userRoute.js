@@ -11,4 +11,6 @@ module.exports.setup = (app) => {
     router.get('/', userController.getAllUsers)
 
     router.post('/signup', userController.signup)
+
+    router.post('/signin', userController.signin)
 }
