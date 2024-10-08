@@ -16,9 +16,9 @@ const getAllUsers = async (req, res) => {
 const signup = async (req, res) => {
     
     try{
-        const { username, password, email, date } = req.body;
+        const { username, password, confirmPassword, email, date } = req.body;
 
-        if (!username || !email || !password) {
+        if (!username || !email || !password || !confirmPassword) {
             return res.status(400).json({ message: 'Missing required fields' });
         }
 
@@ -31,6 +31,10 @@ const signup = async (req, res) => {
 
         if(existEmail){
             return res.status(400).json({ message: 'Email already exists' });
+        }
+
+        if(password !== confirmPassword) {
+            return res.status(400).json({ message: 'Passwords do not match' });
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
