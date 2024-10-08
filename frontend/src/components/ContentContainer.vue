@@ -1,30 +1,6 @@
 <template>
-    <div class="contentMain">
-        <div class="leftNav" id="sidebar">
-        <ul class="leftNav-content">
-            <li id="item1" class="navContent-item navContent-itemInfor" @click="changeColor('item1')">
-                <i class="fa-solid fa-star"></i> 
-                <a class="text">Home</a>
-            </li>
-            <li id="item2" class="navContent-item" @click="changeColor('item2')">
-                <i class="fa-regular fa-folder-open"></i>
-                <a class="text">Your library</a>
-            </li>
-            <li id="item3" class="navContent-item" @click="changeColor('item3')">
-                <i class="fa-solid fa-bell"></i>
-                <a class="text">Notifications</a>
-            </li>
-            <div class="leftNav-content">
-                <span class="study-with">Study with</span>
-                <li id="item4" class="navContent-item" @click="changeColor('item4')">
-                    <i class="fa-solid fa-tags"></i>
-                    <a class="text">Flash card</a>
-                </li>
-            </div>
-        </ul>
-        </div>
 
-        <div class="content-container">
+<div class="content-container">
                 
                 <div class="content-container-recent">
                   <router-link to="/learnpage">
@@ -65,14 +41,14 @@
                         </li>
                     </ul>
                   </router-link>
-                    
+                  
                 </div>
 
                 
                 
             </div>
 
-    </div>
+
 
     
 </template>
