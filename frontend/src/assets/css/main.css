@@ -114,7 +114,7 @@ html {
   top: calc(100% + 4px);
   right: 0;
   list-style: none;
-  width: 190%;
+  min-width: 224px;
   z-index: 1;
   border-radius: 2px;
   display: block;
@@ -169,7 +169,6 @@ html {
   display: flex;
   width: fit-content;
   min-width: 5%;
-  height: 100vh;
   position: sticky;
   transition: width 0.3s;
 }
