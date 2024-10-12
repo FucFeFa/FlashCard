@@ -8,14 +8,16 @@ module.exports.setup = (app) => {
     
     app.use('/api/v1/users', router)
 
-    // router.get('/', userController.getAllUsers)
-
+    // Sign up api routes
     router.post('/signup', userController.signup)
 
+    // Sign in api routes
     router.post('/signin', userController.signin)
-    
+
+    // Log out api routes
     router.post('/logout', userController.logout)
 
+    // Get user data api routes
     router.get('/', userController.userData)
 
 }
