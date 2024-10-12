@@ -84,6 +84,10 @@ html {
   cursor: pointer;
 }
 
+.user-connected {
+  align-items: center;
+}
+
 .header__navbar-item {
   margin: 0 8px;
   position: relative;

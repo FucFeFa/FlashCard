@@ -36,7 +36,7 @@ export default {
                 const userConnected = document.querySelector('.user-connected')
                 const userDefault = document.querySelector('.user-default')
 
-                userConnected.style.display = 'block'
+                userConnected.style.display = 'flex'
                 userDefault.style.display = 'none'
                 
                 document.querySelector('.header__navbar-user-img').src = require(`../assets/img/${avatar}`)
@@ -44,6 +44,21 @@ export default {
                 
             }
 
+        },
+
+        async logout() {
+            const response = await fetch('http://localhost:3000/api/v1/users/logout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include',
+
+            })
+
+            if (response.ok) {
+                this.$router.push('/sign-in-up');
+            } 
         },
     },
 
@@ -82,7 +97,7 @@ export default {
 
 
             <router-link to="/sign-in-up">
-                <div class="user-defautl" style="display: block;">
+                <div class="user-default" style="display: block;">
                     <a class="btn" style="font-weight: 700;">Sign in</a>
                 </div>
             </router-link>
@@ -113,9 +128,9 @@ export default {
                             </li>
                         </div>
 
-                        <div class="header__navbar-user--middle">
+                        <div class="header__navbar-user--middle" @click="logout()">
                             <li class="navContent-item">
-                                <router-link to="/sign-in-up">Log out</router-link>
+                                <a href="">Log out</a>
                             </li>
                         </div>
 
