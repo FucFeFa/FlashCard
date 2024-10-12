@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const userRoute = require('./routes/userRoute')
+const flashcardRoute = require('./routes/flashcardRoute')
 
 // session
 const session = require('express-session');
@@ -29,6 +30,7 @@ app.use(session({
 }))
 
 userRoute.setup(app)
+flashcardRoute.setup(app)
 
 
 module.exports = app

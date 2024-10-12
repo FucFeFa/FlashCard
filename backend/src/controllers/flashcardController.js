@@ -1,0 +1,28 @@
+const flashcardModel = require('../models/flashcardModel');
+
+const addFlashcard = async (req, res) => {
+    
+    try {
+        const userId = req.params.userId;
+        const { flashcardTitle, flashcardDescription } = req.body;
+
+        if(!flashcardTitle) {
+            return res.status(400).json({ message: 'Missing flashcard title' });
+        }
+
+        if(!flashcardDescription) {
+            return res.status(400).json({ message: 'Missing flashcard description' });
+        }
+
+        await flashcardModel.addFlashCard(userId, flashcardTitle, flashcardDescription);
+        res.status(200).json({ message: 'Library added successfully' });
+    }
+    catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Error adding library' });
+    }
+}
+
+module.exports = {
+    addFlashcard,
+};

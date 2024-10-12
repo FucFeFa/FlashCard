@@ -12,6 +12,22 @@ create table users (
     `user_date_signup` varchar(255),
     `user_avatar` varchar(255) default 'default.jpg'
 );
+select * from library;
+
+-- create table library (
+-- 	`library_id` int auto_increment primary key,
+--     `library_name` varchar(255),
+-- 	`user_id` int not null unique,
+--     foreign key (`user_id`) references users(`user_id`)
+-- );
+
+create table flashcard_set(
+	`flashcard_id` int auto_increment primary key,
+    `flashcard_title` varchar(255) not null,
+    `flashcard_description` varchar(255),
+    `user_id` int not null,
+    foreign key (`user_id`) references users(`user_id`)
+);
 
 create table card (
 	`card_id` int auto_increment primary key,
@@ -21,19 +37,7 @@ create table card (
     foreign key (`flashcard_id`) references flashcard_set(`flashcard_id`)
 );
 
-create table flashcard_set(
-	`flashcard_id` int auto_increment primary key,
-    `flashcard_title` varchar(255) not null,
-    `flashcard_description` varchar(255),
-    `library_id` int not null,
-    foreign key (`library_id`) references library(`library_id`)
-);
 
-create table library (
-	`library_id` int auto_increment primary key,
-	`user_id` int not null unique,
-    foreign key (`user_id`) references users(`user_id`)
-);
 
-/* insert users */
-insert into users(user_username, user_password, user_fullname) values
+
+
