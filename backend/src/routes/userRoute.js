@@ -13,6 +13,9 @@ module.exports.setup = (app) => {
     router.post('/signup', userController.signup)
 
     router.post('/signin', userController.signin)
+    
+    router.post('/logout', userController.logout)
 
     router.get('/', userController.userData)
+
 }

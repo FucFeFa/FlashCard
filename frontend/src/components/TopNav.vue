@@ -29,11 +29,20 @@ export default {
             })
 
             const data = await response.json();
-            const user = data.user
-            const avatar = user.user_avatar
-            const name = user.user_fullname
-            document.querySelector('.header__navbar-user-img').src = require(`../assets/img/${avatar}`)
-            document.querySelector('.header__navbar-user--name').innerHTML = name
+            if(data.message !== 'Not authenticated'){
+                const user = data.user
+                const avatar = user.user_avatar
+                const name = user.user_fullname
+                const userConnected = document.querySelector('.user-connected')
+                const userDefault = document.querySelector('.user-default')
+
+                userConnected.style.display = 'block'
+                userDefault.style.display = 'none'
+                
+                document.querySelector('.header__navbar-user-img').src = require(`../assets/img/${avatar}`)
+                document.querySelector('.header__navbar-user--name').innerHTML = name
+                
+            }
 
         },
     },
