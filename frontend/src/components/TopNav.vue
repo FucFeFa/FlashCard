@@ -73,7 +73,7 @@ export default {
 
 
             <router-link to="/sign-in-up">
-                <div class="user-connected" style="display: block;">
+                <div class="user-defautl" style="display: block;">
                     <a class="btn" style="font-weight: 700;">Sign in</a>
                 </div>
             </router-link>
