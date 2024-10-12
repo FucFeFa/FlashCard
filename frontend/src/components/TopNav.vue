@@ -81,10 +81,21 @@ export default {
             </router-link>
 
 
+            <router-link to="/sign-in-up">
+                <div class="user-connected" style="display: block;">
+                    <a class="btn" style="font-weight: 700;">Sign in</a>
+                </div>
+            </router-link>
+            
+
             <div @click="toggleUserMenu()" class="topNav-user">
+
                 <li class="header__navbar-item header__navbar-user">
-                    <img src="" alt="" class="header__navbar-user-img">
-                    <span class="header__navbar-user--name"></span>
+                    <div class="user-connected" style="display: none;">
+                        <img src="" alt="" class="header__navbar-user-img">
+                        <span class="header__navbar-user--name"></span>
+                    </div>
+                    
 
                     <ul id="js_user" v-show="isUserMenuVisible" class="header__navbar-user--menu visible">
                         <div class="header__navbar-user--top">
