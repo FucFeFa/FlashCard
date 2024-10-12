@@ -81,10 +81,16 @@
 
 .body-learn {
     width: 100%;
-    box-shadow: 0 0 2rem 0 #282e3e1f;
+
     height: 500px;
+}
+
+.body-learn-card {
+    box-shadow: 0 0 2rem 0 #282e3e1f;
     border-radius: 6px;
     cursor: pointer;
+
+    height: 500px;
 }
 
 .body-learn-top {
@@ -103,4 +109,57 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+
+/* bottom-learn */
+
+.bottom-learn {
+    padding: 10px 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 38.5%;
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-learn-reset {
+    cursor: pointer;
+    left: 0;
+    color: #586380;
+}
+
+.bottom-learn-next {
+    cursor: pointer;
+    display: flex;
+    font-size: 30px;
+}
+
+.bottom-learn-left,
+.bottom-learn-right {
+    width: 80px;
+    height: 40px;
+    margin: 5px;
+    padding: 0px 25px;
+    text-align: center;
+}
+
+.btn02 {
+
+    border: solid 1px #d9dde8;
+    color: #586380;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+
+.btn02:hover {
+    background: #edeff4;
+}
+
+.bottom-learn-edit {
+    cursor: pointer;
+    color: #586380;
 }

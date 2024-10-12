@@ -20,11 +20,11 @@
             </div>
         </div>
 
-        <!-- Thẻ lật với hiệu ứng xoay -->
-        <div class="card-container" @click="flipCard" :class="['card', { flipped: isFlipped }]">
-            <!-- Mặt trước của thẻ -->
-            <div class="card-face card-front">
-                <div class="body-learn">
+        <div class="body-learn">
+            <div class="card-container" @click="flipCard" :class="['card', { flipped: isFlipped }]">
+                <!-- Mặt trước của thẻ -->
+                <div class="card-face card-front body-learn-card">
+
                     <div class="body-learn-top">
                         <div class="body-learn-item">
                             <i class="fa-solid fa-lightbulb"></i>Get a hint
@@ -32,13 +32,12 @@
                         <div class="body-learn-item"></div>
                     </div>
                     <div class="body-learn-content">Ochinpou</div>
+
                 </div>
-            </div>
 
-            <!-- Mặt sau của thẻ -->
-            <div class="card-face card-back">
+                <!-- Mặt sau của thẻ -->
+                <div class="card-face card-back body-learn-card">
 
-                <div class="body-learn">
                     <div class="body-learn-top">
                         <div class="body-learn-item">
                             <i class="fa-solid fa-lightbulb"></i>Get a hint
@@ -50,12 +49,31 @@
                     <div class="body-learn-content">
                         CON CA
                     </div>
-                </div>
 
+
+                </div>
             </div>
         </div>
 
-        <div class="bottom-learn"></div>
+        <div class="bottom-learn">
+            <div class="bottom-learn-reset">
+                <i class="fa-solid fa-arrow-rotate-right"></i>
+            </div>
+
+            <div class="bottom-learn-next">
+                <div class="bottom-learn-left btn02">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+
+                <div class="bottom-learn-right btn02">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+            </div>
+
+            <div class="bottom-learn-edit">
+                <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+        </div>
     </div>
 </template>
 
