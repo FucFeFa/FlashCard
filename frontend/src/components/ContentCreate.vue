@@ -8,9 +8,12 @@
                     </li>
                 </router-link>
 
-                <li class="leftBar-item navContent-item">
-                    <i class="fa-regular fa-folder-open"></i>
-                </li>
+                <router-link to="/librarypage">
+
+                    <li class="leftBar-item navContent-item">
+                        <i class="fa-regular fa-folder-open"></i>
+                    </li>
+                </router-link>
                 <li class="leftBar-item navContent-item">
                     <i class="fa-solid fa-bell"></i>
                 </li>
