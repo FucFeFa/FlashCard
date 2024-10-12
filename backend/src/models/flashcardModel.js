@@ -3,7 +3,7 @@ const db = require('../config/db');
 // Model for flashCardSet
 
 const flashCardModel = {
-    // Add flashCardSet for new user
+    // Add flashcard
     addFlashCard: (userId, flashcardTitle, flashcardDescription) => {
         return db('flashcard_set').insert({
             user_id: userId,

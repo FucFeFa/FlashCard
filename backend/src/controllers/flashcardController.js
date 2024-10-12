@@ -15,11 +15,11 @@ const addFlashcard = async (req, res) => {
         }
 
         await flashcardModel.addFlashCard(userId, flashcardTitle, flashcardDescription);
-        res.status(200).json({ message: 'Library added successfully' });
+        res.status(200).json({ message: 'Flashcard added successfully' });
     }
     catch (error) {
         console.error(error);
-        res.status(500).json({ message: 'Error adding library' });
+        res.status(500).json({ message: 'Error adding flashcard' });
     }
 }
 
