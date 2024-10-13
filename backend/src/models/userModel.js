@@ -3,9 +3,6 @@ const db = require('../config/db');
 
 //Model for user 
 const userModel = {
-    getAllUsers: () => {
-        return db('users').select('*');
-    },
 
     getUserData: (username) => {
         return db('users').select('*').where({ user_username: username }).first();
