@@ -9,10 +9,14 @@
         </li>
       </router-link>
 
-      <li id="item2" class="navContent-item" @click="changeColor('item2')">
-        <i class="fa-regular fa-folder-open"></i>
-        <a class="text">Your library</a>
-      </li>
+
+      <router-link to="/librarypage">
+
+        <li id="item2" class="navContent-item" @click="changeColor('item2')">
+          <i class="fa-regular fa-folder-open"></i>
+          <a class="text">Your library</a>
+        </li>
+      </router-link>
       <li id="item3" class="navContent-item" @click="changeColor('item3')">
         <i class="fa-solid fa-bell"></i>
         <a class="text">Notifications</a>
