@@ -1,17 +1,6 @@
 const userModel = require('../models/userModel');
 const bcrypt = require('bcrypt');
 
-const getAllUsers = async (req, res) => {
-    try {
-        const users = await userModel.getAllUsers();
-        res.json(users);
-    }
-    catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'Error retrieving users' });
-    }
-}
-
 // Sign up
 const signup = async (req, res) => {
 
@@ -43,7 +32,7 @@ const signup = async (req, res) => {
         
         req.session.user = await userModel.getUserData(username)
         req.session.user_username = username
-        res.status(200).json({ message: req.session.user });
+        res.status(200).json({ message: "Sign up successfully" });
     }
     catch (error) {
         console.error(error);
@@ -70,7 +59,7 @@ const signin = async (req, res) => {
         } else {
             req.session.user = await userModel.getUserData(username)
             req.session.user_username = username
-            res.status(200).json({ message: req.session.user });
+            res.status(200).json({ message: "Sign in successfully" });
         }
     }
     catch (error) {
@@ -101,7 +90,6 @@ const userData = (req, res) => {
 }
 
 module.exports = {
-    getAllUsers,
     signup,
     signin,
     userData,

@@ -12,6 +12,7 @@ create table users (
     `user_date_signup` varchar(255),
     `user_avatar` varchar(255) default 'default.jpg'
 );
+select * from card;
 
 -- create table library (
 -- 	`library_id` int auto_increment primary key,
@@ -35,6 +36,9 @@ create table card (
     `flashcard_id` int not null unique,
     foreign key (`flashcard_id`) references flashcard_set(`flashcard_id`)
 );
+
+ALTER TABLE card MODIFY flashcard_id INT NOT NULL;
+
 
 
 
