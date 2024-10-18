@@ -10,4 +10,7 @@ module.exports.setup = (app) => {
 
     // Create library
     router.post('/create/:userId', flashcardController.addFlashcard)
+
+    // Get all flashcards by user
+    router.get('/data/:userId', flashcardController.getUserFlashcard)
 }

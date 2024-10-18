@@ -14,7 +14,7 @@ const addFlashcard = async (req, res) => {
             return res.status(400).json({ message: 'Missing flashcard description' });
         }
 
-        await flashcardModel.addFlashCard(userId, flashcardTitle, flashcardDescription);
+        await flashcardModel.addFlashcard(userId, flashcardTitle, flashcardDescription);
         res.status(200).json({ message: 'Flashcard added successfully' });
     }
     catch (error) {
@@ -23,6 +23,18 @@ const addFlashcard = async (req, res) => {
     }
 }
 
+const getUserFlashcard = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const flashcard = await flashcardModel.getUserFlashcard(userId);
+        res.status(200).json({ data: flashcard });
+    } catch (err) {
+        console.error(error);
+        res.status(500).json({ message: 'Error getting user flashcards' });
+    }
+}
+
 module.exports = {
     addFlashcard,
+    getUserFlashcard,
 };
